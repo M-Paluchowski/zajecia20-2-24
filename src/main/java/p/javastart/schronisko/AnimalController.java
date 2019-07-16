@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Set;
+
 @Controller
 public class AnimalController {
 
@@ -12,6 +14,13 @@ public class AnimalController {
 
     public AnimalController(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
+    }
+
+    @GetMapping("/")
+    public String home(Model model) {
+        Set<Animal> animals = animalRepository.findAll();
+        model.addAttribute("animals", animals);
+        return "home"; // -> /resources/templates/home.html
     }
 
     @GetMapping("/zwierzak")
