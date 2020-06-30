@@ -1,4 +1,4 @@
-package p.javastart.schronisko;
+package p.javastart.schronisko.animal;
 
 public class Animal {
 

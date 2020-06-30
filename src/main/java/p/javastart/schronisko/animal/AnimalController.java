@@ -1,4 +1,4 @@
-package p.javastart.schronisko;
+package p.javastart.schronisko.animal;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
