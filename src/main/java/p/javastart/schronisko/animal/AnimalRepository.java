@@ -34,12 +34,16 @@ public class AnimalRepository {
     }
 
     public Set<Animal> findAll() {
-        return animals;
+        return new HashSet<>(animals);
     }
 
     public Set<Animal> findBySpecies(AnimalSpecies species) {
         return animals.stream()
                 .filter(animal -> animal.getSpecies() == species)
                 .collect(Collectors.toSet());
+    }
+
+    public void add(Animal animal) {
+        animals.add(animal);
     }
 }

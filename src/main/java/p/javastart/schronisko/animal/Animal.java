@@ -7,6 +7,8 @@ public class Animal {
     private String img;
     private AnimalSpecies species;
 
+    public Animal() {}
+
     public Animal(String name, String description, String img, AnimalSpecies species) {
         this.name = name;
         this.description = description;
@@ -40,5 +42,9 @@ public class Animal {
 
     public AnimalSpecies getSpecies() {
         return this.species;
+    }
+
+    public void setSpecies(AnimalSpecies species) {
+        this.species = species;
     }
 }
