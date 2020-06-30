@@ -46,4 +46,17 @@ public class AnimalRepository {
     public void add(Animal animal) {
         animals.add(animal);
     }
+
+    public void update(Animal animal) {
+        Animal animalFromDatabase = findByName(animal.getName());
+        animalFromDatabase.setDescription(animal.getDescription());
+        animalFromDatabase.setImg(animal.getImg());
+        animalFromDatabase.setSpecies(animal.getSpecies());
+    }
+
+    public Set<Animal> findByNameContains(String searchText) {
+        return animals.stream()
+                .filter(animal -> animal.getName().toLowerCase().contains(searchText.toLowerCase()))
+                .collect(Collectors.toSet());
+    }
 }

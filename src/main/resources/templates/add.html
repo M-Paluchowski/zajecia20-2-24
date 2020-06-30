@@ -6,17 +6,17 @@
 </head>
 <body>
 
-    <form action="/dodaj" method="post" th:object="${animal}">
+    <form th:action="${mode == 'edit' ? '/edytuj' : '/dodaj'}" method="post" th:object="${animal}">
         Imię: <input type="text" th:field="*{name}" required="required"><br/>
         Obrazek: <input type="text" th:field="*{img}"><br/>
-        Kategoria: <select th:field="*{species}">
+        Kategoria: <select th:field="*{species}" required>
             <option value="" disabled selected>Wybierz...</option>
             <option value="CAT">Kot</option>
             <option value="DOG">Pies</option>
             <option value="OTHER">Inne</option>
         </select><br/>
         Opis: <textarea placeholder="Opis" th:field="*{description}"></textarea><br/>
-        <input type="submit" value="Dodaj">
+        <input type="submit" th:value="${mode == 'edit' ? 'EDYTUJ' : 'DODAJ'}">
     </form>
 </body>
 </html>

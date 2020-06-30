@@ -21,6 +21,8 @@
 
     <a href="/">Powrót do strony głównej</a>
 
+    <a th:href="@{|/edytuj?imie=${animal.name}|}">Edytuj zwierzaka</a><br/>
+
     <h2 th:text="${animal.name}">NAZWA</h2>
 
     <img th:src="${animal.img}" style="width: 300px; min-width: 300px"/>
