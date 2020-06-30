@@ -5,11 +5,13 @@ public class Animal {
     private String name;
     private String description;
     private String img;
+    private AnimalSpecies species;
 
-    public Animal(String name, String description, String img) {
+    public Animal(String name, String description, String img, AnimalSpecies species) {
         this.name = name;
         this.description = description;
         this.img = img;
+        this.species = species;
     }
 
     public String getName() {
@@ -34,5 +36,9 @@ public class Animal {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public AnimalSpecies getSpecies() {
+        return this.species;
     }
 }

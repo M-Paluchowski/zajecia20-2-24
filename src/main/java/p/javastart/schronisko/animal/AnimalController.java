@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -17,8 +19,15 @@ public class AnimalController {
     }
 
     @GetMapping("/")
-    public String home(Model model) {
-        Set<Animal> animals = animalRepository.findAll();
+    public String home(Model model, @RequestParam(required = false, name = "gatunek") AnimalSpecies species) {
+        Set<Animal> animals;
+
+        if (species != null) {
+            animals = animalRepository.findBySpecies(species);
+        } else {
+            animals = animalRepository.findAll();
+        }
+
         model.addAttribute("animals", animals);
         return "home"; // -> /resources/templates/home.html
     }

@@ -5,19 +5,22 @@
     <title>Schronisko</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" type="text/css" href="/style.css"/>
 
 </head>
 <body>
-
 <div class="header">
 
     <h1>Schronisko Reksio i Klakier</h1>
 
 </div>
-
 <div class="content">
+
+    Gatunki:
+    <a href="/">Wszystkie</a>
+    <a href="/?gatunek=CAT">Koty</a>
+    <a href="/?gatunek=DOG">Psy</a>
+    <a href="/?gatunek=OTHER">Inne</a>
 
     <h2>Zwierzaki szukające domu:</h2>
 
@@ -27,12 +30,7 @@
                 <h2 th:text="${animal.name}">Azor</h2>
                 <p th:text="${animal.description}">opis opis opis</p>
             </div>
-
-
-
     </a>
-
 </div>
-
 </body>
 </html>
